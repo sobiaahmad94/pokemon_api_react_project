@@ -5,12 +5,40 @@
 }
 
 .pokemon-details-container {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 200px;
+}
+
+.pokemon-drop-down {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  width: 200px;
+}
+
+.pokemon-drop-down-container {
+  padding: 0px;
+  margin: 0px;
+}
+
+.pokemon-character-img {
+  width: 2px; /* Set the desired width */
+  height: auto; /* Maintain aspect ratio */
+  display: block; /* Ensure image takes up the available width */
+}
+
+
+/* positioning wasn't how I wanted it */
+/* .pokemon-details-container {
   position: absolute;
   top: 0;
   right: 0;
 }
 
 .pokemon-character-drop-down-container {
-  position: absolute;
+  position: 0;
   right: 0;
-}
+  bottom: 0;
+} */
