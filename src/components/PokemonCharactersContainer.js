@@ -19,7 +19,7 @@ function PokemonCharactersContainer() {
 
     return (
         <>
-        <NavBar />
+            <NavBar />
             <PokemonList pokemonData={pokemonData} />
             <PokemonDropDown pokemonData={pokemonData} />
         </>

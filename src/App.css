@@ -2,6 +2,8 @@
 
 * {
   font-family: 'Saira', sans-serif;
+  text-transform: uppercase;
+
 }
 
 .pokemon-logo {
@@ -11,11 +13,22 @@
   left: 20px;
 }
 
+
+  .nav-items {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: flex-end;
+}
+
+
 .pokemon-details-container {
   position: fixed;
   bottom: 20px;
   right: 20px;
   width: 200px;
+
 }
 
 .pokemon-drop-down {
@@ -28,6 +41,7 @@
 .pokemon-drop-down-container {
   padding: 10px;
   margin: 0px;
+  text-transform: uppercase;
 }
 
 .pokemon-character-img {
