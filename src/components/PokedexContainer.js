@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import PokemonList from './PokemonList';
 import PokemonDropDown from './PokemonDropDown';
+import PokemonCharactersContainer from './PokemonCharactersContainer';
+import NavBar from './NavBar';
 
 function PokemonContainer() {
     const [pokemonData, setPokemonData] = useState([]);
@@ -18,8 +20,8 @@ function PokemonContainer() {
 
     return (
         <>
-            <PokemonList pokemonData={pokemonData} />
-            <PokemonDropDown pokemonData={pokemonData}/>
+        <NavBar />
+        <PokemonCharactersContainer /> {/* this contains PokemonList and PokemonDropDown :) */}
         </>
     )
 }

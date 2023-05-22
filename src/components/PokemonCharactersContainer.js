@@ -1,7 +1,7 @@
-// PokemonCharactersContainer.js
 import React, { useState, useEffect } from 'react';
 import PokemonList from './PokemonList';
 import PokemonDropDown from './PokemonDropDown';
+import NavBar from './NavBar';
 
 function PokemonCharactersContainer() {
     const [pokemonData, setPokemonData] = useState([]);
@@ -19,6 +19,7 @@ function PokemonCharactersContainer() {
 
     return (
         <>
+        <NavBar />
             <PokemonList pokemonData={pokemonData} />
             <PokemonDropDown pokemonData={pokemonData} />
         </>

@@ -4,6 +4,13 @@
   font-family: 'Saira', sans-serif;
 }
 
+.pokemon-logo {
+  width: 250px;
+  height: auto;
+  display: block;
+  left: 20px;
+}
+
 .pokemon-details-container {
   position: fixed;
   bottom: 20px;
@@ -19,15 +26,16 @@
 }
 
 .pokemon-drop-down-container {
-  padding: 0px;
+  padding: 10px;
   margin: 0px;
 }
 
 .pokemon-character-img {
-  width: 2px; /* Set the desired width */
-  height: auto; /* Maintain aspect ratio */
-  display: block; /* Ensure image takes up the available width */
+  width: 2px;
+  height: auto;
+  display: block;
 }
+
 
 
 /* positioning wasn't how I wanted it */
