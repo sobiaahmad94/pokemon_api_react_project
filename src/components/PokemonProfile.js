@@ -1,4 +1,3 @@
-// PokemonProfile.js
 import React, { useEffect, useState } from 'react';
 
 function PokemonProfile({ pokemonInfo }) {
