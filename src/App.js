@@ -1,14 +1,14 @@
 import React from 'react';
-import './App.css';
+import PokemonCharactersContainer from './components/PokemonCharactersContainer';
 
-import PokedexContainer from './components/PokedexContainer';
+// css
+import './App.css'
 
 function App() {
   return (
     <>
-      {/* <h1>This is the App component</h1> */}
-      <PokedexContainer />
-
+      <h1>This is the App component</h1>
+      <PokemonCharactersContainer />
     </>
   );
 }

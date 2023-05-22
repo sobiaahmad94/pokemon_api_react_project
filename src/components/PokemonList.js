@@ -1,30 +1,28 @@
+// PokemonList.js
 import React, { useState } from 'react';
 
 function PokemonList({ pokemonData }) {
-    const [pokemonDetails, setPokemonDetails] = useState('');
+    const [pokemonDetails, setPokemonDetails] = useState(null);
     const [imageUrl, setImageUrl] = useState('');
 
-    const fetchPokemonDetails = (url) => {
-        console.log('grabbing pokemon details hopefully :)', url);
-
-        fetch(url)
-            .then((response) => response.json())
-            .then((data) => {
-                const abilities = data.abilities.map((ability) => ability.ability.name);
-                const types = data.types.map((type) => type.type.name);
-                const details = {
-                    id: data.id,
-                    abilities: abilities,
-                    types: types,
-                };
-                const frontDefaultImageUrl = data.sprites.front_default;
-                details.name = data.species.name;
-                setImageUrl(frontDefaultImageUrl);
-                setPokemonDetails(details);
-            })
-            .catch((error) => {
-                console.error('cannae get pokemon details, errorrrrrr', error);
-            });
+    const fetchPokemonDetails = async (url) => {
+        try {
+            const response = await fetch(url);
+            const data = await response.json();
+            const abilities = data.abilities.map((ability) => ability.ability.name);
+            const types = data.types.map((type) => type.type.name);
+            const details = {
+                id: data.id,
+                abilities: abilities,
+                types: types,
+                name: data.name,
+            };
+            const frontDefaultImageUrl = data.sprites.front_default;
+            setImageUrl(frontDefaultImageUrl);
+            setPokemonDetails(details);
+        } catch (error) {
+            console.error('Error fetching Pokemon details:', error);
+        }
     };
 
     return (
@@ -34,7 +32,9 @@ function PokemonList({ pokemonData }) {
                 {pokemonData.map((pokemon) => (
                     <li key={pokemon.name}>
                         {pokemon.name}
-                        <button onClick={() => fetchPokemonDetails(pokemon.url)}>Pokemon Details</button>
+                        <button onClick={() => fetchPokemonDetails(pokemon.url)}>
+                            Pokemon Details
+                        </button>
                     </li>
                 ))}
             </ul>

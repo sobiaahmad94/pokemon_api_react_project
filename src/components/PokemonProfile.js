@@ -1,3 +1,4 @@
+// PokemonProfile.js
 import React, { useEffect, useState } from 'react';
 
 function PokemonProfile({ pokemonInfo }) {
@@ -27,12 +28,14 @@ function PokemonProfile({ pokemonInfo }) {
             {imageUrl ? (
                 <img src={imageUrl} alt={pokemonInfo.name} />
             ) : (
-                <p>the image is loading, please wait a momentooooo...</p>
+                <p>the image is loading, please wait a moment...</p>
             )}
             <p>Name: {pokemonInfo.name}</p>
             <p>ID: {pokemonInfo.id}</p>
             <p>Types: {pokemonInfo.types.map((type) => type.type.name).join(', ')}</p>
-            <p>Abilities: {pokemonInfo.abilities.map((ability) => ability.ability.name).join(', ')}</p>
+            <p>
+                Abilities: {pokemonInfo.abilities.map((ability) => ability.ability.name).join(', ')}
+            </p>
         </>
     );
 }

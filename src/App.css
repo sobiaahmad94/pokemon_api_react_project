@@ -9,3 +9,8 @@
   top: 0;
   right: 0;
 }
+
+.pokemon-character-drop-down-container {
+  position: absolute;
+  right: 0;
+}
