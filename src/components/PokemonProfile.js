@@ -1,9 +1,17 @@
-import React, { useEffect, useState } from 'react';
+// useEffect and useState imported
+import React, {useEffect, useState} from 'react';
 
+// the function takes in pokemonInfo is a prop
+// I used destructuring with the curly boys but it is like props.pokemonInfo
+// imageUrl is the initial state and it's just empty like an empty string 
+// when setImageUrl function runs then the state will change though
 function PokemonProfile({ pokemonInfo }) {
     const [imageUrl, setImageUrl] = useState('');
 
+    // useEffect is so the pokemon's data can be grabbed and when it's updated the imageUrl state variable when pokemonInfo changes to setPokemonInfo
+    // if there is pokemonInfo then I think it fetches for it like pokemonInfo.url and gets the wee cute images
     useEffect(() => {
+
         if (pokemonInfo) {
             fetch(pokemonInfo.url)
                 .then((response) => response.json())
@@ -12,18 +20,22 @@ function PokemonProfile({ pokemonInfo }) {
                     setImageUrl(frontDefaultImageUrl);
                 })
                 .catch((error) => {
-                    console.error('Error fetching Pokemon data:', error);
+                    console.error('oh no, errorrrrr!', error);
                 });
         }
     }, [pokemonInfo]);
 
+    // I got a bit confused with truthy and falsy but I think it's just so it knows not to return anything if there's no pokemonInfo
+    // ! here means no
     if (!pokemonInfo) {
-        return null;
+        return '';
     }
 
     return (
         <>
             <h2>Pokemon Profile</h2>
+            {/* checks if imageUrl isn't an empty string I think */}
+            {/* displays other details*/}
             {imageUrl ? (
                 <img src={imageUrl} alt={pokemonInfo.name} />
             ) : (

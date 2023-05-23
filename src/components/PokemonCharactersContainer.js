@@ -31,7 +31,7 @@ function PokemonCharactersContainer() {
     }, []);
 
     return (
-        // put the components here
+        // put the components here 
         <>
             <NavBar />
             <PokemonList pokemonData={pokemonData} />
